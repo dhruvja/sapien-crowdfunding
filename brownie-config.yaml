@@ -1,0 +1,22 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.3.0
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.3.0"
+
+project_structure:
+    build: client/src/artifacts
+
+dotenv: .env
+networks:
+  default: mainnet-fork-dev
+  rinkeby:
+    eth-usd-price: '0xF1bE033D786cEcbf5Abcd3B1F063DE258Dc9c5d8'
+  mainnet-fork-dev:
+    eth-usd-price: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+wallets:
+  from_key: ${PRIVATE_KEY}
+
+dev_deployment_artifacts: true
